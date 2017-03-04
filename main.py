@@ -1,13 +1,4 @@
 import sys
-<<<<<<< HEAD
-=======
-import base64
-
-user_input_plaintext = input("Please enter your message: ")
-user_input_key = input("Please enter the key: ")
-
-plaintext = base64.b64decode(user_input_plaintext)
->>>>>>> c1ae31ad6abe2e9c44cc26634d8bc64f363c5a82
 
 def ksa(key):
     """Produces the key for RC4"""
@@ -18,8 +9,7 @@ def ksa(key):
         j = (j + s[i] + key[i % len(key)]) % 256
         s[i], s[j] = s[j], s[i]
     return s
-<<<<<<< HEAD
-
+    
 def prga(s):
     i = j = 0
     while True:
@@ -41,5 +31,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-=======
->>>>>>> c1ae31ad6abe2e9c44cc26634d8bc64f363c5a82
