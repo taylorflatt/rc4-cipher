@@ -1,4 +1,4 @@
-import sys
+"""RC4 Cipher"""
 
 def ksa(key):
     """Produces the key for RC4"""
