@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-// Implemented small sample using C#.
 static class RC4
 {
     static void Main(string[] args)
@@ -21,15 +20,12 @@ static class RC4
         {
             Console.Write(element + " ");
         }
-        Console.Write("]");
-        Console.WriteLine();
-        Console.WriteLine();
+        Console.WriteLine("]");
     }
 
     public static List<int> PRGA(List<int> s_list, int[] text)
     {
-        var i = 0;
-        var j = 0;
+        int i = 0, j = 0;
         var cipher = new List<int>();
         for(int index = 0; index < text.Length; index++)
         {
@@ -44,7 +40,7 @@ static class RC4
         return cipher;
     }
 
-    public static List<int> KSA(List<int> s_list, List<int> t_list)
+    public static void KSA(List<int> s_list, List<int> t_list)
     {
         var j = 0;
         for (int i = 0; i < 8; i++)
@@ -52,15 +48,12 @@ static class RC4
             j = (j + s_list[i] + t_list[i]) % 8;
             s_list.Swap(i, j);
         }
-        return s_list;
     }
 
-    public static List<int> Swap(this List<int> list, int i, int j)
+    public static void Swap(this List<int> list, int i, int j)
     {
         var temp = list[i];
         list[i] = list[j];
         list[j] = temp;
-
-        return list;
     }
 }
